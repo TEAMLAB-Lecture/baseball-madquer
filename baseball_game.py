@@ -273,7 +273,7 @@ def main():
     print("Random Number is : ", random_number)
     while True:
         user_input = input('Input guess number : ')
-        if not int(user_input):
+        if user_input == '0':
             break
         # ===Modify codes below=============
         # 위의 코드를 포함하여 자유로운 수정이 가능함
