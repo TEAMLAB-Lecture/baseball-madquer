@@ -125,7 +125,6 @@ def is_validated_number(user_input_number):
         not is_duplicated_number(user_input_number):
         result = True
     else:
-        print('Wrong Input. Input again')
         result = False
     # ==================================
     return result
@@ -272,16 +271,18 @@ def main():
     random_number = str(get_not_duplicated_three_digit_number())
     print("Random Number is : ", random_number)
     while True:
-        user_input = input('Input guess number : ')
-        if user_input == '0':
-            break
         # ===Modify codes below=============
         # 위의 코드를 포함하여 자유로운 수정이 가능함
         while True:
-            if is_validated_number(user_input):
+            user_input = input('Input guess number : ')
+            if is_validated_number(user_input) or user_input == '0':
                 break
             else:
-                user_input = input('Input guess number : ')
+                print('Wrong Input. Input again')
+
+        if user_input == '0':
+            break
+
         result = get_strikes_or_ball(user_input, random_number)
         print(f'Strikes : {result[0]} ,  Balls : {result[1]}')
         if result[0] == 3:
@@ -294,7 +295,7 @@ def main():
                 print("Random Number is : ", random_number)
                 continue
 
-            elif is_no(one_more_input) or one_more_input == '0':
+            elif is_no(one_more_input):
                 break
 
         else:
