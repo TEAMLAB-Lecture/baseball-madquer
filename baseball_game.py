@@ -294,7 +294,7 @@ def main():
                 print("Random Number is : ", random_number)
                 continue
 
-            elif is_no(one_more_input):
+            elif is_no(one_more_input) or one_more_input == '0':
                 break
 
         else:
